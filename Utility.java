@@ -1,5 +1,7 @@
 public class Utility {
-
+	
+	long MOD = (long)1e9 + 7;
+	
 	public static long ModPow(long x, long y, long MOD) {
 		long res = 1L;
 		x = x % MOD;
@@ -16,10 +18,10 @@ public class Utility {
 		if (y == 0)
 			return 1;
 		else if (y % 2 == 0) {
-			long z = modPow(x, y / 2, MOD);
+			long z = modPowRecur(x, y / 2, MOD);
 			return (z * z) % MOD;
 		} else {
-			return (x % MOD) * modPow(x, y - 1, MOD);
+			return (x % MOD) * modPowRecur(x, y - 1, MOD);
 		}
 	}
 
