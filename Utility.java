@@ -64,12 +64,7 @@ public class Utility {
 	public static double powItr(long x, long y) {
 		double res = 1;
 		while (y >= 1) {
-			if ((y & 1) > 0) {
-				if (y > 0)
-					res = res * x;
-				else
-					res = res / x;
-			}
+			if ((y & 1) > 0) res = res * x;
 			x = x * x;
 			y >>= 1;
 		}
