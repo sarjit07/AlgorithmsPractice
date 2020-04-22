@@ -41,5 +41,39 @@ public class Utility {
 
 		return gcd;
 	}
+	// TimeComplexity: Log(y)
+	public static double pow(long x, long y) {
+		if (y == 0) {
+			return 1;
+		}
+		if (y == 1) {
+			return x;
+		}
+		double temp = pow(x, y / 2);
+		if (y % 2 == 0)
+			return temp * temp;
+		else {
+			if (y > 0) {
+				return x * temp * temp;
+			} else {
+				return (temp * temp) / x;
+			}
+		}
+	}
+
+	public static double powItr(long x, long y) {
+		double res = 1;
+		while (y >= 1) {
+			if ((y & 1) > 0) {
+				if (y > 0)
+					res = res * x;
+				else
+					res = res / x;
+			}
+			x = x * x;
+			y >>= 1;
+		}
+		return res;
+	}
 
 }
