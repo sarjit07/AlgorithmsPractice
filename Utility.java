@@ -72,7 +72,8 @@ public class Utility {
 	}
 	
 	public static void Sorter(){
-	    int a[] = {1,5,7,3,2,9,8};
+	    MyElement a[] = {Some MyElement objects};
+		
 	    // sorting in increasing order
 	    SortAscending compAscending = new SortAscending();
 	    Arrays.sort(a, compAscending);
