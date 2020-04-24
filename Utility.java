@@ -70,5 +70,43 @@ public class Utility {
 		}
 		return res;
 	}
+	
+	public static void Sorter(){
+	    int a[] = {1,5,7,3,2,9,8};
+	    // sorting in increasing order
+	    SortAscending compAscending = new SortAscending();
+	    Arrays.sort(a, compAscending);
+		
+	    // sorting in descending order
+	    SortDescending compDescending = new SortDescending();
+	    Arrays.sort(a, compDescending);	
+		
+	}
 
 }
+
+
+class MyElement{
+	int x;
+	int a;
+
+	public MyElement(int x, int a) {
+		this.x = x;
+		this.a = a;
+	}	
+}
+
+class SortAscending implements Comparator<MyElement>{
+	@Override
+	public int compare(MyElement o1, MyElement o2) {
+		return (int) (o1.x - o2.x);
+	}
+}
+
+class SortDescending implements Comparator<MyElement>{
+	@Override
+	public int compare(MyElement o1, MyElement o2) {
+		return (int) (o2.x - o1.x);
+	}
+}
+
