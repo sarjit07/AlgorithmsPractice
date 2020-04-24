@@ -74,9 +74,12 @@ public class Utility {
 	public static void Sorter(){
 	    MyElement a[] = {Some MyElement objects};
 		
-	    // sorting in increasing order
+	    // Way-1 sorting in increasing order
 	    SortAscending compAscending = new SortAscending();
 	    Arrays.sort(a, compAscending);
+	    
+	    // Way-2 Sorting in ascending order
+	    Arrays.sort(a, Comparator.comparingLong(o -> o.x));
 		
 	    // sorting in descending order
 	    SortDescending compDescending = new SortDescending();
