@@ -86,6 +86,25 @@ public class Utility {
 	    Arrays.sort(a, compDescending);	
 		
 	}
+	
+	// returns binary representation of a Number
+	public static String binaryRep(int n, String s) {
+		if(n>1)  return binaryRep(n>>1, n%2 + s);
+		return ((n%2) + s);
+	}
+	
+	// Prints binary representation of a Number
+	// Gives result in 32 bits representation
+	public static void binaryRep(int n) {
+		String s ="";
+		for(int i =0;i<=31;i++) {
+			int x = 1<<i;
+			if((x&n) == 0) s = '0' + s;
+			else
+				s = '1' + s;
+		}
+		System.out.println(s);
+	}
 
 }
 
