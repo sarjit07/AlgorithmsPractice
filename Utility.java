@@ -105,6 +105,22 @@ public class Utility {
 		}
 		System.out.println(s);
 	}
+	
+	// Prints all 2^N subsequences for an integer 
+	public static void printAll2nCombinations(int n) {
+		for(int i=0;i < (1<<n);i++) {
+			
+			for(int j=0;j<n;j++) {
+				int x = 1 << j;
+				if((i & x) > 0 ) {
+					System.out.print("1 ");
+				}else {
+					System.out.print("0 ");
+				}
+			}
+			System.out.println();
+		}
+	}
 
 }
 
