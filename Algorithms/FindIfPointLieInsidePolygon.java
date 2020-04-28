@@ -3,7 +3,8 @@ package justforcoding;
 //How to check if a given point lies inside or outside a polygon?
 
 public class FindIfPointLieInsidePolygon {
-
+	
+	static int INF = 1000000;
 	public static void main(String args[]) {
 
 		Point a[] = new Point[4];
@@ -17,7 +18,7 @@ public class FindIfPointLieInsidePolygon {
 		if (poly.length < 3)
 			return false;
 		int count = 0, i = 0;
-		Point extreme = new Point(Integer.MAX_VALUE, p.y);
+		Point extreme = new Point(INF, p.y);
 		do {
 			Point p1 = poly[i];
 			Point p2 = poly[(i + 1) % poly.length];
