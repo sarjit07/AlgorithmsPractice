@@ -1,5 +1,13 @@
 package Strings;
 
+
+/*
+ * @Author: Arjit Sharma
+ * 
+ * TimeComplexity: o(n+m)
+ * 
+ */
+
 public class KMPAlgorithm {
 
 	public static void main(String args[]) {
