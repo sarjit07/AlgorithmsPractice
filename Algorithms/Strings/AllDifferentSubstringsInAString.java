@@ -18,7 +18,7 @@ public class AllDifferentSubstringsInAString {
 	static long hash[];
 	static long p_pow[];
 	static int n;
-	static long prime = 3;
+	static long prime = 31;
 	static long MOD = (long) 1e9 + 7;
 
 	public static void main(String[] args) {
