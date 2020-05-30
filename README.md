@@ -25,3 +25,15 @@ public static int countSetBitsRec(int num) {
  ```
  (int)(Math.log(n)/Math.log(2))
  ```
+ 
+ #### Right most set bit / Least significant set bit in a Number
+ ```
+ int x = (n & (~n))
+
+ 2's Complement Of a Number = (~n)
+=> 1. Invert all bits (1's complement). 
+ => 2. Add 1 to it. 
+ ```
+
+ 
+ 
