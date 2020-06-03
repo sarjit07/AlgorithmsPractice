@@ -35,5 +35,19 @@ public static int countSetBitsRec(int num) {
  => 2. Add 1 to it. 
  ```
 
+#### What is coordinate compression ???
+ ```
+Let's say that in a problem, you're required to store N (1 <= N <= 10^5) elements 
+and perform some operations on those elements (say put them in a Segment Tree). 
+Normally, if the elements were also in the range (1, 10^5), inserting them into a data structure would be a cinch.
+
+Say, for example, the elements are now in the range (1, 10^12). 
+Now simply inserting elements into a Segment Tree is not possible because you cannot allocate memory for 10^12 integers.
+This is where coordinate compression comes into play.
+
+Let's read in all of the possible numbers, sort them, and assign each of them a number based off of increasing order.
+Because N is <= 10^5, the maximum number you assign is going to be 10^5. 
+Thus, by compressing the "coordinates", we maintain the relative order of points in a memory-efficient manner.
+```
  
  
