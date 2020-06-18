@@ -73,7 +73,7 @@ public class DijkstraAlgorithm {
 		parent.put(source, -1);
 		distance[source] = 0;
 
-		while (set.size() != verticies) {
+		while (!pq.isEmpty()) {
 			
 			int u = pq.remove().node;
 			
