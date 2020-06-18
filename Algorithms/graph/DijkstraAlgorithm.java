@@ -9,6 +9,18 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+
+/*
+ * @Author: Arjit Sharma
+ * 
+ * Time Complexity: O(ElogV)
+ * as using priority queue with adjacency list
+ * 
+ * Single Source Shortest path to all Verticies. 
+ * Prints the path as well.
+ */
+
+
 public class DijkstraAlgorithm {
 
 	static List<Node>[] adj;
