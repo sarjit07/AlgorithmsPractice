@@ -13,8 +13,10 @@ import java.util.Scanner;
 /*
  * @Author: Arjit Sharma
  * 
- * Time Complexity: O(ElogV)
- * as using priority queue with adjacency list
+ * Time Complexity: O((E+V)logV) ~= O(ElogV) as using priority queue with adjacency list
+ * The time complexity remains O(ELogV)) as there will be 
+ * at most O(E) vertices in priority queue and O(Log E) is same as O(Log V).
+ * A case, when a vertex is connected with all other verticies...then no. of edges in PQ..can be at max O(V)
  * 
  * Single Source Shortest path to all Verticies. 
  * Prints the path as well.
