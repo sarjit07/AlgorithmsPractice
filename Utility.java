@@ -1,6 +1,32 @@
 public class Utility {
 
 	long MOD = (long) 1e9 + 7;
+	
+	// Time Complexity: O(sqrt(n))
+	public static void printAllDivisors(int n) {
+
+		// To store the divisors in sorted manner
+		List<Integer> divisors1 = new ArrayList<Integer>();
+		Stack<Integer> divisors2 = new Stack<Integer>();
+
+		for (int i = 1; i <= Math.sqrt(n); i++) {
+			if (n % i == 0) {
+				if (n / i == i)
+					divisors1.add(i);
+				else {
+					divisors1.add(i);
+					divisors2.add(n / i);
+				}
+			}
+		}
+
+		for (int i = 0; i < divisors1.size(); i++) {
+			System.out.print(divisors1.get(i) + " ");
+		}
+		while (!divisors2.isEmpty())
+			System.out.print(divisors2.pop() + " ");
+
+	}
 
 	public static long ModPow(long x, long y, long MOD) {
 		long res = 1L;
