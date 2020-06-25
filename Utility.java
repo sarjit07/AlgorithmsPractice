@@ -27,6 +27,118 @@ public class Utility {
 			System.out.print(divisors2.pop() + " ");
 
 	}
+	
+		/* SieveOfEratosthenes Algo
+	 * Time Complexity: O(n*log(logn)) 
+	 * As outer loop runs => n/2 + n/3 + n/5 + ... + n/p
+	 * => n * (1/2 +1/3+ 1/5 + ... + 1/p) - Harmonic Progression
+	 * => n * log(log(n))
+	 */
+	
+	public static void findAllPrimeNumbers(int n) {
+		
+		boolean prime[] = new boolean[n+1];
+		Arrays.fill(prime, true);
+		
+		for(int i=2; i*i <=n ; i++) {
+			if(prime[i] == true) {
+				
+				for(int j=i*i;j<=n;j=j+i) {
+					prime[j] = false;
+				}
+			}
+		}
+		
+		// Print all prime numbers 
+		for(int i = 2; i <= n; i++) 
+		{ 
+		    if(prime[i] == true) 
+			System.out.print(i + " "); 
+		} 
+				
+	}
+	
+
+	
+	/*
+	 * Time Complexity: O(sqrt(n))
+	 */
+	public static void printAllPrimeFactors(int n) {
+		
+		List<Integer> primeFactors = new ArrayList<Integer>();
+		while(n%2 == 0) {
+			primeFactors.add(2);
+			n = n/2;
+		}
+		
+		for(int i=3;i<=Math.sqrt(n);i++) {
+			while(n%i == 0) {
+				primeFactors.add(i);
+				n = n/i;
+			}
+		}
+		
+		if(n>2)
+			primeFactors.add(n);
+		
+		for(int i=0;i<primeFactors.size();i++) {
+			System.out.print(primeFactors.get(i) + " ");
+		}
+		
+	}
+	
+	/*
+	 * Precalculating Shortest Prime Factor for each number till 1e7, We can
+	 * calculate all prime factors of a number in o(logn) time
+	 * 
+	 * PreCal time complexity: o(nlog(logn)) 
+	 * Time Complexity: o(logn)
+	 * 
+	 */
+
+	public static void findAllPrimeFactorsUsingSeive(int n) {
+
+		int spf[] = sieve();
+
+		List<Integer> primeFactors = new ArrayList<Integer>();
+
+		while (n != 1) {
+			primeFactors.add(spf[n]);
+			n = n / spf[n];
+		}
+
+		for (int i = 0; i < primeFactors.size(); i++) {
+			System.out.print(primeFactors.get(i) + " ");
+		}
+	}
+
+	public static int[] sieve() {
+		int MAX = (int) 1e7 + 1;
+		int shortesPrimeFactor[] = new int[MAX];
+
+		shortesPrimeFactor[1] = 1;
+
+		for (int i = 2; i < MAX; i++) {
+			shortesPrimeFactor[i] = i;
+		}
+		for (int i = 4; i < MAX; i += 2) {
+			shortesPrimeFactor[i] = 2;
+		}
+
+		for (int i = 3; i * i < MAX; i++) {
+
+			if (shortesPrimeFactor[i] == i) {
+
+				for (int j = i * i; j < MAX; j += i) {
+					if (shortesPrimeFactor[j] == j)
+						shortesPrimeFactor[j] = i;
+				}
+			}
+		}
+
+		return shortesPrimeFactor;
+	}
+
 
 	public static long ModPow(long x, long y, long MOD) {
 		long res = 1L;
