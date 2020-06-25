@@ -138,6 +138,24 @@ public class Utility {
 
 		return shortesPrimeFactor;
 	}
+	
+	/*
+	 * Time Complexity: o(n)
+	 * Reference: https://www.youtube.com/watch?v=aGjfSTr_0AE
+	 * Proof also in notes.
+	 */
+	public static int nCrModP(int n, int r, int p) {
+		
+		if(r==0) return 1;
+		int fac[] = new int[n+1];
+		
+		fac[0]=1;
+		for(int i=1;i<=n;i++) {
+			fac[i] = ( fac[i-1]*i ) % p;
+		}
+		
+		return (int) ((fac[n]%p) * (ModPow(fac[r], p-2, p)%p) * (ModPow(fac[n-r], p-2, p)%p))%p; 
+	}
 
 
 	public static long ModPow(long x, long y, long MOD) {
