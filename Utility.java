@@ -62,6 +62,8 @@ public class Utility {
 	
 	/*
 	 * Time Complexity: O(sqrt(n))
+	 * Can keep the count as well inside while loop to know the power of prime factors
+	 * 
 	 */
 	public static void printAllPrimeFactors(int n) {
 		
