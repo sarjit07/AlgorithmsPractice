@@ -21,7 +21,7 @@ public static int countSetBitsRec(int num) {
 }   
  ```
  
- #### Getting the highest power of 2 in a Number.
+ #### Getting the highest power of 2 in a Number Or Finding right most set bit.
  ```
  (int)(Math.log(n)/Math.log(2))
  ```
