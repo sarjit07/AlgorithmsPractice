@@ -19,6 +19,16 @@ public static int countSetBitsRec(int num) {
 	return lookup[num & eightSetBits] + lookup[num >> 8 & eightSetBits] + 
                lookup[num >> 16 & eightSetBits] + lookup[num >> 24 & eightSetBits];
 }   
+
+In o(logn) time using Brian Kernighan’s Algorithm
+int countSetBit(long a){
+	int count = 0;
+	while(a!=0){
+		a = (a & (a-1))
+		count++;
+	}
+	return count;
+}
  ```
  
  #### Getting the highest power of 2 in a Number Or Finding right most set bit.
