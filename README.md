@@ -21,6 +21,7 @@ public static int countSetBitsRec(int num) {
 }   
 
 In o(logn) time using Brian Kernighan’s Algorithm
+
 int countSetBit(long a){
 	int count = 0;
 	while(a!=0){
