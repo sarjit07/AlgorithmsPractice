@@ -59,6 +59,8 @@ This is where coordinate compression comes into play.
 Let's read in all of the possible numbers, sort them, and assign each of them a number based off of increasing order.
 Because N is <= 10^5, the maximum number you assign is going to be 10^5. 
 Thus, by compressing the "coordinates", we maintain the relative order of points in a memory-efficient manner.
+
+Reference: https://www.geeksforgeeks.org/convert-an-array-to-reduced-form-set-1-simple-and-hashing/
 ```
  
  
