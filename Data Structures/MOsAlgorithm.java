@@ -14,7 +14,25 @@ import java.util.Comparator;
  * https://blog.anudeep2011.com/mos-algorithm/
  * https://cp-algorithms.com/data_structures/sqrt_decomposition.html
  * 
+ * Things to Remember:
+ * 1. Works on offline queries. (Meaning: Takes all queries -> Sorts them -> Process queries -> Output result at last) 
+ * 2. Divides the search space into sqrt logical blocks to search
+ * 3. Sorts based on block size for Left pointer and for same blocks sorts in increasing order of Right pointer.
+ * 4. Uses the result of previous query to solve next query.
+ * 
+ * 5. Amount moved by right pointer is O(N) for each block. We have O(Sqrt(N)) blocks, so the total is O(N * Sqrt(N))
+ * 	  Example: {1, 2} {0, 3} {1, 7} {2, 8} {4, 4} {4, 8} {7, 8} sorted queries. 3 blocks of size 3.
+ *    The right pointer goes to max = 8, in first block
+ * 6. In each block, the amount left pointer moves is O(X * Sqrt(N)) where X is number of queries falling in that block.
+ * 	  Total queries = Q, so, time for left pointer movement = O(Q * Sqrt(N))
+ * 7. Total Time: O( (N + Q) * Sqrt(N) )
+ * 
+ * Limitation: We should be able to write add remove functions.
+ * Questions: Can it be used for solving update queries. ?
+ * 
+ * 
  */
+
 
 public class MOsAlgorithm {
 
