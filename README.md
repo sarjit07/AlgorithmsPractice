@@ -2,6 +2,14 @@
 
 ``` MOD = (long)1e9+7;```
 
+#### GCD of two number
+``` 
+public static int gcd(int a, int b) {
+		if(b==0)
+			return a;
+		return gcd(b, a%b);
+	}
+```
 
 #### All primes till 100:
 ```{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97}```
