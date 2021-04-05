@@ -5,6 +5,12 @@ import java.io.*;
 import java.util.*;
 
 
+/* Important Properties:
+1. On inserting new node into Heap -> Heapify bottom to top
+2. On deletion of node from Heap -> Heapify from that node to bottom.
+*/
+
+
 public class HeapSort {
 	
 	static int n;
