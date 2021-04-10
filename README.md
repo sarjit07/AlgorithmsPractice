@@ -72,3 +72,11 @@ Reference: https://www.geeksforgeeks.org/convert-an-array-to-reduced-form-set-1-
 ```
  
  
+#### Priority Queue as max Heap 
+```PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());``` 
+#### Priority Queue as min Heap 
+```PriorityQueue<Integer> queue = new PriorityQueue<>();``` 
+
+Supports .add(), .remove(), .peek(), .poll() -> removes the first element
+
+	
