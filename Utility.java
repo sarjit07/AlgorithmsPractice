@@ -172,16 +172,16 @@ public class Utility {
 		return res;
 	}
 
-	public static long modPow(long x, long y, long MOD) {
-		if (y == 0)
-			return 1;
-		else if (y % 2 == 0) {
-			long z = modPow(x, y / 2, MOD);
-			return (z%MOD * z%MOD) % MOD;
-		} else {
-			return (x % MOD) * modPow(x, y - 1, MOD);
-		}
-	}
+// 	public static long modPow(long x, long y, long MOD) {
+// 		if (y == 0)
+// 			return 1;
+// 		else if (y % 2 == 0) {
+// 			long z = modPow(x, y / 2, MOD);
+// 			return (z%MOD * z%MOD) % MOD;
+// 		} else {
+// 			return (x % MOD) * modPow(x, y - 1, MOD);
+// 		}
+// 	}
 
 	public static long gcdExtended(long a, long b, long x, long y) {
 		if (a == 0) {
