@@ -176,10 +176,10 @@ public class Utility {
 		if (y == 0)
 			return 1;
 		else if (y % 2 == 0) {
-			long z = modPowRecur(x, y / 2, MOD);
+			long z = modPow(x, y / 2, MOD);
 			return (z%MOD * z%MOD) % MOD;
 		} else {
-			return (x % MOD) * modPowRecur(x, y - 1, MOD);
+			return (x % MOD) * modPow(x, y - 1, MOD);
 		}
 	}
 
