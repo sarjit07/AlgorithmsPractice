@@ -159,7 +159,7 @@ public class Utility {
 		return (int) ((fac[n]%p) * (ModPow(fac[r], p-2, p)%p) * (ModPow(fac[n-r], p-2, p)%p))%p; 
 	}
 
-	// returns => x^y % MOD
+	// returns => x^y % MOD working
 	public static long ModPowRecur(long x, long y, long MOD) {
 		long res = 1L;
 		
@@ -171,17 +171,9 @@ public class Utility {
 		}
 		return res;
 	}
+	
+	
 
-// 	public static long modPow(long x, long y, long MOD) {
-// 		if (y == 0)
-// 			return 1;
-// 		else if (y % 2 == 0) {
-// 			long z = modPow(x, y / 2, MOD);
-// 			return (z%MOD * z%MOD) % MOD;
-// 		} else {
-// 			return (x % MOD) * modPow(x, y - 1, MOD);
-// 		}
-// 	}
 
 	public static long gcdExtended(long a, long b, long x, long y) {
 		if (a == 0) {
