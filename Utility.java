@@ -159,7 +159,7 @@ public class Utility {
 		return (int) ((fac[n]%p) * (ModPow(fac[r], p-2, p)%p) * (ModPow(fac[n-r], p-2, p)%p))%p; 
 	}
 
-
+	// returns => x^y % MOD
 	public static long ModPow(long x, long y, long MOD) {
 		long res = 1L;
 		x = x % MOD;
