@@ -91,8 +91,9 @@ public class DijkstraAlgorithm {
 					if (newDist < distance[v.node]) {
 						distance[v.node] = newDist;
 						parent.put(v.node, u);
+						pq.add(new Node(v.node, distance[v.node]));
 					}
-					pq.add(new Node(v.node, distance[v.node]));
+					
 				}
 			}
 			
