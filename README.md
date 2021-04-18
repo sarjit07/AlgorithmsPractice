@@ -3,6 +3,7 @@
 ``` MOD = (long)1e9+7;```
 
 #### To Print upto 8 decimal places
+```(double)Math.round(timenow * 100000000d) / 100000000d;```
 ```System.out.print(String.format("%.08f", val));```
 
 #### GCD of two number
