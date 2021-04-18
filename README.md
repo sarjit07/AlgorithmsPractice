@@ -2,6 +2,9 @@
 
 ``` MOD = (long)1e9+7;```
 
+#### To Print upto 8 decimal places
+```System.out.print(String.format("%.08f", val));```
+
 #### GCD of two number
 ``` 
 public static int gcd(int a, int b) {
