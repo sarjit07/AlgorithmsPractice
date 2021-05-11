@@ -23,10 +23,10 @@ public class LongestCommonSubsequence {
 			for(int i=0;i<=s.length();i++)
 				Arrays.fill(dp[i], -1);
 			
-      //Method-1 - Bottom Up
+      			//Method-1 - Bottom Up
 			System.out.println(longestCommonSubsequence(s,p, s.length(), p.length()));
       
-      //Method-2 - Top Down
+      			//Method-2 - Top Down
 			longestCommonSubsequence(s, p);
 		}
 
