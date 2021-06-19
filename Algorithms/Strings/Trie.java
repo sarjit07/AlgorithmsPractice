@@ -165,7 +165,8 @@ public class Trie {
 		boolean endOfWord;
 		HashMap<Character, TrieNode> children;
 		
-		TrieNode(Character c){
+		TrieNode(Character ch){
+			this.ch = ch
 			this.endOfWord = false;
 			this.children = new HashMap<Character, Trie.TrieNode>();
 		}
