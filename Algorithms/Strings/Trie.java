@@ -166,7 +166,7 @@ public class Trie {
 		HashMap<Character, TrieNode> children;
 		
 		TrieNode(Character ch){
-			this.ch = ch
+			this.ch = ch;
 			this.endOfWord = false;
 			this.children = new HashMap<Character, Trie.TrieNode>();
 		}
