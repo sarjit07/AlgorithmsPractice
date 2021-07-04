@@ -166,4 +166,23 @@ class Student{
 	}
 }
 
+/********** OUTPUT *********
+[2, 5, 3, 10, 6]
+GetMin -> 2
+Removing 2 -> true
+[3, 5, 6, 10]
+GetMin -> 1
 
+50 30 23 
+100 123 342 
+
+5 100
+1 89
+6 89
+4 75
+
+abhi 100
+aaaa 89
+ahmed 89
+priyank 75
+*/
