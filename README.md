@@ -77,7 +77,8 @@ Reference: https://www.geeksforgeeks.org/convert-an-array-to-reduced-form-set-1-
  
  
 #### Priority Queue as max Heap 
-```PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());``` 
+```PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());```
+```PriorityQueue<Student> queue = new PriorityQueue<Student>(new AnyCustomStudentDescendingSorter());
 #### Priority Queue as min Heap 
 ```PriorityQueue<Integer> queue = new PriorityQueue<>();``` 
 
