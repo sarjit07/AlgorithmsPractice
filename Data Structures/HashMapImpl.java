@@ -7,6 +7,26 @@ import java.util.*;
 
 /*
  * Reference: https://www.javamadesoeasy.com/2015/02/hashmap-custom-implementation.html
+ * Overriding Equals and HashCode methods: https://www.javamadesoeasy.com/2015/02/overriding-equals-and-hashcode-method.html
+ * Full Java Class: https://www.javamadesoeasy.com/2015/02/override-equals-and-hashcode-method.html
+ * 
+ * 
+ * 
+ * HashMap Performance and Collisions in the HashMap : https://www.baeldung.com/java-hashmap-advanced
+ * 
+ * NOTE: implementing a good hash function, (that evenly distributes the keys in the bucket, can further reduce the worst case time complexity)
+ * Reference: https://www.youtube.com/watch?v=udB-dHqS3ng
+ * 
+ * HashMap with LinkedList is the Chaining. Which is called Chaining in HashMap As Collision Resolution.
+ * 
+ *  
+ * ReHashing: It is done when entries in the hashmap increases beyond a certain threshold. And now, computation of put and get may no longer be O(1).
+ * In ReHashing, a new bucket of double the size of old bucket is created, and then each entry in old bucket is taken and called a put method on new bucket.
+ * https://www.geeksforgeeks.org/load-factor-and-rehashing/
+ * 
+ *  
+ * Double Hashing: https://www.geeksforgeeks.org/double-hashing/
+ * Using 2 hash functions instead of one;
  * 
  */
 
@@ -21,6 +41,8 @@ public class HashMapImpl<K,V> {
 		bucket = new Entry[capacity];
 	}
 	
+	
+	// this method can be optimized to insert just at the head, so complexity in worst case for insertion can come down from O(n) to O(1)
 	public void put(K key, V value) {
 		
 		if(key == null)
@@ -158,6 +180,45 @@ public class HashMapImpl<K,V> {
 			this.key = key;
 			this.value = value;
 			this.next = next;
+		}
+		
+		public K getKey() {
+	        return key;
+	    }
+
+	    public void setKey(K key) {
+	        this.key = key;
+	    }
+
+	    public V getValue() {
+	        return value;
+	    }
+
+	    public void setValue(V value) {
+	        this.value = value;
+	    }
+
+		
+		@Override
+		public boolean equals(Object obj) {
+			
+			if(obj == null)
+				return false;
+			
+			if(this.getClass() != obj.getClass())
+				return false;
+			
+			Entry<K,V> entry = (Entry)obj;
+			
+			return ((this.key == entry.key || this.key.equals(entry.key))
+					&& (this.value == entry.value || this.value.equals(entry.value)));
+			
+		}
+		
+		@Override
+		public int hashCode() {
+			return (this.key == null ? 0:this.key.hashCode()) 
+					+ (this.value == null ? 0:this.value.hashCode());
 		}
 	}
 	
