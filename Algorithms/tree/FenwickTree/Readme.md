@@ -28,7 +28,7 @@ get (6) -> node 6 + node 4 + node 0 = -1 + 1 + 0 = 0 which proves the above algo
 #### https://www.spoj.com/problems/MATSUM/
 
 
-### 5. 3d BIT
+### 5. 3D BIT
 https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/counting-in-byteland/
 
 
