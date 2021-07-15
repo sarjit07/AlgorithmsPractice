@@ -1,7 +1,7 @@
 ## Variations Of Fenwick Tree
 
-####  1. Point Update and Range Query - Common Scenario.
-####  2. Range Update and Point Query 
+###  1. Point Update and Range Query - Common Scenario.
+###  2. Range Update and Point Query 
 
 
 #### https://www.codechef.com/problems/SPREAD
@@ -18,14 +18,21 @@ suppose we want to update range [2 4] with value 1, thus first we call update(2)
 get (6) -> node 6 + node 4 + node 0 = -1 + 1 + 0 = 0 which proves the above algorithm holds true.
 
 
-####  3. Range Update and Range Query - NOT YET DONE
+###  3. Range Update and Range Query - NOT YET DONE
 
-####  4. 2D BIT
+###  4. 2D BIT
 
 #### Problem  : https://lightoj.com/problem/points-in-rectangle
 (Solution: https://sifatshishir.blogspot.com/2018/02/lightoj-points-in-rectangle.html)
 
 #### https://www.spoj.com/problems/MATSUM/
+
+
+### 5. 3d BIT
+https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/counting-in-byteland/
+
+
+
 
 ```
 class BIT {
