@@ -30,3 +30,41 @@ get (6) -> node 6 + node 4 + node 0 = -1 + 1 + 0 = 0 which proves the above algo
 #### 2. https://www.codechef.com/problems/SPREAD
 
 
+
+```
+class BIT {
+	int size;
+	long [] table;
+	
+	public BIT(int size) {
+		table = new long[size];
+		this.size = size;
+	}
+	
+	//Update Position i by delta
+	void update(int i, long delta) {
+		while(i < size) {
+			table[i] += delta;
+			i += Integer.lowestOneBit(i);
+		}
+	}
+	
+	//Compute the prefix sum value [1, i]
+	long sum(int i) {
+		long sum=0;
+		while(i > 0) {
+			sum += table[i];
+			i -= Integer.lowestOneBit(i);
+		}
+		return sum;
+	}
+	
+	//Compute the sum value [i, j]
+	long rangeSum(int i, int j) {
+		return sum(j) - sum(i);
+	}
+}
+
+BIT fen = new BIT(SIZE);
+
+```
