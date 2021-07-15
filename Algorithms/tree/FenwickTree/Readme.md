@@ -64,3 +64,7 @@ class BIT {
 BIT fen = new BIT(SIZE);
 
 ```
+
+
+### List of Good Questions 
+https://cp-algorithms.com/data_structures/fenwick.html
